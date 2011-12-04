@@ -215,7 +215,7 @@ function contact_sidebar()
    }
    else 
    { 
-    return '<!-- '.$plugin.' Disabled -->'; 
+    // return '<!-- '.$plugin.' Disabled -->'; 
    }  
 }
 ?>

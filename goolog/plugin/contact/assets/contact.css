@@ -1,0 +1,7 @@
+/******* FORM *******/
+#contact_form_holder { padding:0px; margin:0px; }
+.error, .success { display:none; padding:8px;margin-bottom:10px;position:relative;color:#444;overflow:hidden }
+.error   { background:#f2cac2; border:1px solid #ae432e }
+.success { background:#d5e5b8; border:1px solid #77ab13 }
+.error img, .success img { vertical-align:middle; }
+/******* /FORM *******/

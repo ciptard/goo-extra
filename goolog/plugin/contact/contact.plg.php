@@ -5,10 +5,10 @@
  * @version	0.2
  * @date	01/12/2011
  * @update	04/12/2011
- * @author	Frédéric K.
+ * @author	Frï¿½dï¿½ric K.
  **/ 
  /*
-** On pré-installe les paramètres par défauts.
+** On prï¿½-installe les paramï¿½tres par dï¿½fauts.
 */ 
 if(!isValidEntry('plugin', $plugin))
 {
@@ -27,7 +27,7 @@ require 'plugin/' .$plugin. '/lang/' .$config['lang']. '.lng.php';
 */
 function contact_head()
 {
-  # Lecture des données
+  # Lecture des donnï¿½es
   $plugin = 'contact';
   $data   = readEntry('plugin', $plugin);
   $config = readEntry('config', 'config');
@@ -49,7 +49,7 @@ function contact_menu()
 {
   $plugin = 'contact';
   $out ='';
-  # Lecture des données
+  # Lecture des donnï¿½es
   $data = readEntry('plugin', $plugin);
   if ($data['state']=='on') 
    { 
@@ -108,7 +108,7 @@ function contact_view()
 {
   $out ='';
   global $lang;
-  # Lecture des données
+  # Lecture des donnï¿½es
   $plugin = 'contact';
   $data = readEntry('plugin', $plugin);
   if ($data['state']=='on') 
@@ -164,7 +164,7 @@ function contact_sidebar()
 {
   $out ='';
   global $lang;
-  # Lecture des données
+  # Lecture des donnï¿½es
   $plugin = 'contact';
   $data = readEntry('plugin', $plugin);
   if ($data['state']=='on' && $data['statesidebar']=='on') 
@@ -215,7 +215,7 @@ function contact_sidebar()
    }
    else 
    { 
-    return '<!-- '.$plugin.' Disabled -->'; 
+    // return '<!-- '.$plugin.' Disabled -->'; 
    }  
 }
 ?>

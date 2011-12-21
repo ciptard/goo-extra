@@ -5,10 +5,10 @@
  * @version	0.2
  * @date	01/12/2011
  * @update	04/12/2011
- * @author	Frï¿½dï¿½ric K.
+ * @author	Frédéric K.
  **/ 
  /*
-** On prï¿½-installe les paramï¿½tres par dï¿½fauts.
+** On pré-installe les paramètres par défauts.
 */ 
 if(!isValidEntry('plugin', $plugin))
 {
@@ -27,7 +27,7 @@ require 'plugin/' .$plugin. '/lang/' .$config['lang']. '.lng.php';
 */
 function contact_head()
 {
-  # Lecture des donnï¿½es
+  # Lecture des données
   $plugin = 'contact';
   $data   = readEntry('plugin', $plugin);
   $config = readEntry('config', 'config');
@@ -49,11 +49,11 @@ function contact_menu()
 {
   $plugin = 'contact';
   $out ='';
-  # Lecture des donnï¿½es
+  # Lecture des données
   $data = readEntry('plugin', $plugin);
   if ($data['state']=='on') 
    { 
-    $out .= '<li><a href="view.php?plugin=contact">' .$data['contact_menu']. '</a></li>';
+    $out .= '<li><a href="view.php/plugin/contact">' .$data['contact_menu']. '</a></li>';
     return $out;
    } 
    else 
@@ -76,7 +76,7 @@ function contact_config()
                $data['state']        = clean($_POST['state']); 
                $data['statesidebar'] = clean($_POST['statesidebar']);            
                saveEntry('plugin', $plugin, $data);
-               $out .= '<p><span style="color:green">' .$lang['data_save']. '</span><br /><a href="config.php?plugin='.$plugin.'">' .$lang['redirect']. '&nbsp;' .$plugin.'</a></p>';
+               $out .= '<p><span style="color:green">' .$lang['data_save']. '</span><br /><a href="config.php/plugin/'.$plugin.'">' .$lang['redirect']. '&nbsp;' .$plugin.'</a></p>';
        }
         else
        {
@@ -91,7 +91,7 @@ function contact_config()
                 </div>   
                             
                <div id="divToToggle" style="display:none">' .$lang['install_help']. '</div>
-               <form action="config.php?plugin='.$plugin.'" method="post">
+               <form action="config.php/plugin/'.$plugin.'" method="post">
                <p>' .text('contact_menu', isset($data)? $data['contact_menu'] : ''). '</p>
                <p>' .text('email', isset($data)? $data['email'] : ''). '</p>
                <p>' .select('state', array('on'=> $lang['state_on'], 'off'=> $lang['state_off']), $data['state']). '</p>   
@@ -108,7 +108,7 @@ function contact_view()
 {
   $out ='';
   global $lang;
-  # Lecture des donnï¿½es
+  # Lecture des données
   $plugin = 'contact';
   $data = readEntry('plugin', $plugin);
   if ($data['state']=='on') 
@@ -164,7 +164,7 @@ function contact_sidebar()
 {
   $out ='';
   global $lang;
-  # Lecture des donnï¿½es
+  # Lecture des données
   $plugin = 'contact';
   $data = readEntry('plugin', $plugin);
   if ($data['state']=='on' && $data['statesidebar']=='on') 
@@ -215,7 +215,7 @@ function contact_sidebar()
    }
    else 
    { 
-    // return '<!-- '.$plugin.' Disabled -->'; 
+    return '<!-- '.$plugin.' Disabled -->'; 
    }  
 }
 ?>

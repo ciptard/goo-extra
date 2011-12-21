@@ -53,7 +53,7 @@ function contact_menu()
   $data = readEntry('plugin', $plugin);
   if ($data['state']=='on') 
    { 
-    $out .= '<li><a href="view.php?plugin=contact">' .$data['contact_menu']. '</a></li>';
+    $out .= '<li><a href="view.php/plugin/contact">' .$data['contact_menu']. '</a></li>';
     return $out;
    } 
    else 
@@ -76,7 +76,7 @@ function contact_config()
                $data['state']        = clean($_POST['state']); 
                $data['statesidebar'] = clean($_POST['statesidebar']);            
                saveEntry('plugin', $plugin, $data);
-               $out .= '<p><span style="color:green">' .$lang['data_save']. '</span><br /><a href="config.php?plugin='.$plugin.'">' .$lang['redirect']. '&nbsp;' .$plugin.'</a></p>';
+               $out .= '<p><span style="color:green">' .$lang['data_save']. '</span><br /><a href="config.php/plugin/'.$plugin.'">' .$lang['redirect']. '&nbsp;' .$plugin.'</a></p>';
        }
         else
        {
@@ -91,7 +91,7 @@ function contact_config()
                 </div>   
                             
                <div id="divToToggle" style="display:none">' .$lang['install_help']. '</div>
-               <form action="config.php?plugin='.$plugin.'" method="post">
+               <form action="config.php/plugin/'.$plugin.'" method="post">
                <p>' .text('contact_menu', isset($data)? $data['contact_menu'] : ''). '</p>
                <p>' .text('email', isset($data)? $data['email'] : ''). '</p>
                <p>' .select('state', array('on'=> $lang['state_on'], 'off'=> $lang['state_off']), $data['state']). '</p>   
@@ -215,7 +215,7 @@ function contact_sidebar()
    }
    else 
    { 
-    // return '<!-- '.$plugin.' Disabled -->'; 
+    return '<!-- '.$plugin.' Disabled -->'; 
    }  
 }
 ?>

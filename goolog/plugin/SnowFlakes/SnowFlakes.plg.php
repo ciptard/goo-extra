@@ -10,7 +10,7 @@
  // On pré-installe les paramètres par défauts.
 if(!isValidEntry('plugin', $plugin))
 {
-      $data['state']       ='on';
+      $data['state']       ='off';
       $data['snowmax']     = '35';
       $data['snowcolor']   = '#aaaacc';
       $data['snowtype']    = 'Times';
@@ -76,14 +76,14 @@ function SnowFlakes_config()
                $data['snowingzone'] = clean($_POST['snowingzone']); 
                $data['state'] = clean($_POST['state']);             
                saveEntry('plugin', $plugin, $data);
-               $out .= '<p><span style="color:green">' .$lang['data_save']. '</span><br /><a href="config.php?plugin='.$plugin.'">' .$lang['redirect']. '&nbsp;' .$plugin.'</a></p>';
+               $out .= '<p><span style="color:green">' .$lang['data_save']. '</span><br /><a href="config.php/plugin/'.$plugin.'">' .$lang['redirect']. '&nbsp;' .$plugin.'</a></p>';
        }
         else
        {
                if (isValidEntry('plugin', $plugin))
                $data = readEntry('plugin', $plugin);
                $out .= '<div class="block" style="float:right">' .$lang['infos']. '</div>
-               <form action="config.php?plugin='.$plugin.'" method="post">
+               <form action="config.php/plugin/'.$plugin.'" method="post">
                <p>' .text('snowmax', isset($data)? $data['snowmax'] : ''). '</p>
                <p>' .text('snowcolor', isset($data)? $data['snowcolor'] : ''). '</p>
                <p>' .text('snowtype', isset($data)? $data['snowtype'] : ''). '</p>

@@ -2,8 +2,8 @@
 /**
  * Plugin Sidebar Search
  *
- * @version	1.0
- * @date	21/12/2011
+ * @version	0.2
+ * @date	22/12/2011
  * @author	Frédéric K.
  **/
  // On pré-installe les paramètres par défauts.
@@ -12,52 +12,19 @@ if(!isValidEntry('plugin', $plugin))
       $data['state']      ='off';          
       saveEntry('plugin', $plugin, $data);
 } 
+
 # Lecture du fichier langue
 require 'plugin/' .$plugin. '/lang/' .$config['lang']. '.lng.php';
+
 // Css
 function SidebarSearch_head()
 {
+  $plugin = 'SidebarSearch';
   # Lecture des données
   $data = readEntry('plugin', 'SidebarSearch');
   if ($data['state']=='on') 
    { 
-  return '<style type="text/css">
-#sidebar input[type=search]	{display: inline-block; width: 130px; margin: 0; padding: 4px 10px 3px 20px;
-				 border: none; -moz-border-radius: 10px; -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.7);
-				 font: 11px "Lucida Grande", sans-serif;
-				 /* search.png: */ background: #ddd url("data:image/png;base64,\
-				 iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAARVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\
-				 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADc6ur3AAAAF3RSTlMAAQIDBAUGFyI6SFFv\
-				 goWQkpSfoKGio4AL660AAABaSURBVHheXY1HEoAgFEMD+GmforT7H1VYoI5vlzIJQC7kHJzGhLgtCmsBuH6ytXwVR0\
-				 CYnhTEIwggNwtA2JrpK/61PdD98Uz3kQz2qU8jLiUVkVImjoiNMLHeotgFJ/aIIRcAAAAASUVORK5CYII=")
-				 no-repeat 5px 5px;}
-#sidebar input[type=search]:focus	{/* replicate the glow around the focused textbox */
-				 -webkit-box-shadow: 0 0 3px 3px -webkit-focus-ring-color;
-				    -moz-box-shadow: 0 0 3px 3px -moz-mac-focusring, inset 0 1px 2px rgba(0,0,0,.7);
-				 background-color: #eee;}
-
-/* submit button inside the search field */
-#sidebar input[type=submit]	{display: none; width: 19px; height: 19px; cursor: pointer;
-				 margin: 0 0 0 -23px; padding: 0; border: none; text-indent: -9999px;
-				 /* go.png: */ background: url("data:image/png;base64,\
-				 iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAASFBMVEUAAAA9HgBBIAD9cAD/dAP/dQX/dQX/dQX/dA\
-				 X/dAX/dAX/dgX/dgX/fAr/ewn/fQv+gA7ksn35jyX////03sf+/v7lsnv23sa7baTDAAAADXRSTlMAGCFdkJ/2+fr7\
-				 /NLbqJDi2wAAAGlJREFUeF5VTtsWgzAIYxaqs02ousv//+nAHR8ML4QQiASKtWe3IolJZzBq1imYOnGCGmuVzmNLuh\
-				 SxQfr3/UnRpIEeNFU2WTgA7K9jH6zSgeEMzcF++bbTlzeB/8213P9dWcBVH3LP+QN9IAb/TXCVCgAAAABJRU5ErkJg\
-				 gg==") no-repeat 0 4px;}
-
-/* hover / focus effects */
-#sidebar input[type=submit]:hover,  #sidebar input[type=search]:focus+input,
- #sidebar input[type=submit]:focus, #sidebar input[type=search]:hover+input
-				{display: inline-block;}
-#sidebar input[type=submit]:hover,  #sidebar input[type=submit]:focus
-				{/* gos.png: */ background: url("data:image/png;base64,\
-				 iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAVFBMVEUAAAA+FQDwTgDwTgDwTgDtTgDqTwDwUADwUQ\
-				 DwUQDwUQDwUQDgUQDvUgDvUwDvUwDvUgDvVQDvVADw8O/tVQDt3Mzt28rt28ngo2vv7+7v7uzt3c3pZ0kxAAAAEXRS\
-				 TlMAIeTg1q6N9fv6+fZh/P3+/fUbhzIAAABkSURBVHheVY5HFoAwCERJlFjShNi9/z0FyyKzAP6jDYgCNp3FACrjPC\
-				 WK5J0RcoleZSdjfiY6dsUYAL3k7VTMCE2kH3MLI8+KV5EwgH16S5Ee23dv/fbqm/U/9dIzSz2Jl9rnDfeTCF6HAK3W\
-				 AAAAAElFTkSuQmCC") no-repeat 0 4px;}
-  </style>';
+  return '<link href="plugin/'.$plugin.'/assets/style.css" rel="stylesheet" type="text/css" />';
    } 
    else 
    { 
@@ -88,6 +55,8 @@ function SidebarSearch_config()
        }
        return $out;
 }
+
+// Sidebar View
 function SidebarSearch_sidebar()
 {
   $plugin = 'SidebarSearch';
@@ -99,7 +68,8 @@ function SidebarSearch_sidebar()
    { 
     $out .= '<h1>'.$lang['search'].'</h1>
              <form action="view.php/plugin/'.$plugin.'" method="post">
-               <input type="search" name="post" placeholder="'.$lang['search'].'…" />
+               ' .text('post', $lang['search']). '
+               <!--<input type="search" name="post" placeholder="'.$lang['search'].'…" />-->
 		       <input type="submit" value="Go" />
              </form>';
     return $out;   
@@ -109,8 +79,11 @@ function SidebarSearch_sidebar()
    // return '<!-- SidebarSearch Disabled -->'; 
    }  
 }
+
+// Post Search and return results
 function SidebarSearch_view()
 {
+global $lang;
 if(check('post'))
 {
 	$_POST['post'] = clean($_POST['post']);

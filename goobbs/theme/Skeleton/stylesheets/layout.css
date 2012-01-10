@@ -1,0 +1,101 @@
+/*
+* Based on Skeleton V1.1
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* Modified for Goobbs & Goolog by Frédéric K.
+*/
+
+/* Table of Content
+==================================================
+	#Header
+	#Naviugatiuon
+	#Page Styles
+	#Notification
+	#Tables
+	#Footer
+	#Media Queries
+	#Font-Face 
+*/
+	
+/* Header
+================================================== */
+header h1{font-family: Bebas Neue; opacity:0.8;}
+/* Navigation
+================================================== */
+nav{float:right;height:30px}
+nav li a{padding:7px 10px 5px 10px}
+nav li a:hover {background-color:#0d9ce0;-moz-border-radius: 5px;-webkit-border-radius: 5px; border-radius: 5px; color:#fff; text-decoration:none}
+nav li{font-size:14px;letter-spacing:1px;list-style-type:none;text-transform:uppercase; display: inline-block}
+nav:after,nav:before{clear:both;content:"";display:block;height:0;overflow:hidden;visibility:hidden}
+
+/* #Page Styles
+================================================== */
+.block{position:relative;background:#333;color:white;font-family:Monaco, Courier, MonoSpace;line-height:1.8;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;font-size:12px;padding:10px;margin:5px;overflow:auto;white-space:pre; white-space:pre-wrap; word-wrap:break-word}
+#page ul li, .meta ul li, #jump ul li{padding:2px 4px; margin:4px; display:inline-block; border-radius:4px; color:#fff; text-shadow:0 -1px rgba(0,0,0,0.3)}
+#page ul li{background-color:#7fae00}
+#jump ul li {background-color: #00AEFF}
+.box{padding:7px 14px; border:1px solid #CCC}
+.quote{color:#789922}
+.title{font-size:18px;text-transform: uppercase }
+.meta{text-align:right}
+.meta ul li{background-color:#c08c00}
+.post, .reply{padding:14px 7px 0 7px; border-bottom:1px dotted #777}
+:target{background-color:#FFD}
+#page{text-align:center}
+
+/* #Notification
+================================================== */
+.msg{display:block; padding:6px 7px; font-weight:bold; font-size:13px; background:#eee; border:1px solid rgba(0,0,0,0.1); margin-bottom:12px; border-radius:3px; -webkit-border-radius:3px; -moz-border-radius:3px; text-shadow:0 1px rgba(255,255,255,0.9); position:relative}
+.msg{background-color:#c00000; color:#fff; text-shadow:0 -1px rgba(0,0,0,0.3)}
+.success{background-color:#7fae00; color:#fff; text-shadow:0 -1px rgba(0,0,0,0.3)}
+
+.warning{background-color:#c08c00; color:#fff; text-shadow:0 -1px rgba(0,0,0,0.3)}
+/* #Tables 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+table{font-size:12px;width:100%;}
+table a{text-decoration:none;}
+table .th{background-color:rgb(249,249,249);border-bottom:1px solid rgb(153,153,153);font-weight:normal;text-align:left;padding:2px 3px;color:rgb(103,103,103);vertical-align:top;}
+table .th img.icon{height:16px;width:16px;display:block;vertical-align:top;margin-top:1px;}
+table td{border-bottom:1px solid rgb(234,234,234);padding:2px 3px;color:rgb(51,51,51);font-weight:bold;}
+table tr:hover td{background-color:rgb(253,253,253);}
+table td select{float:left; width:50px; margin-right:10px}
+table td div{font-style:italic;color:rgb(103,103,103);font-weight:normal;font-size:12px;padding-left:3px;padding-right:3px;}
+.w1{width:15%}
+.w2{width:20%}
+.pinned, .locked{padding:1px 2px; font-size:10px; font-weight:bold; margin-right:4px; border-radius:4px}
+.pinned{background-color:#DAEDE2; color:#528F6C}
+.locked{background-color:#EAD7D7; color:#8E5252}
+.right{float:right; width:680px}
+.left{float:left; width:160px; word-wrap:break-word}
+
+/* #Footer
+================================================== */
+footer{margin-top:30px; font-size:12px; list-style-type:none; text-align:center; color:#999}
+footer:after,
+footer:before{clear:both;content:"";display:block;height:0;overflow:hidden;visibility:hidden}
+footer li{margin-left:10px; display:inline-block} 
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}
+
+
+/* #Font-Face
+================================================== */
+@font-face {font-family: EngelLight; src: url('../fonts/EngelLight_ltd.ttf');}
+@font-face {font-family: Bebas Neue; src: url('../fonts/BebasNeue.otf');}

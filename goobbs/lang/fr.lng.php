@@ -39,11 +39,12 @@ $lang['minute'] = 'minute';
 $lang['second'] = 'seconde';
 $lang['plural'] = 's';
 $lang['ago'] = 'avant';
-$lang['errorLength'] = ' est trop court ou trop long';
-$lang['errorBot'] = 'Code Anti Spam incorrect!';
+$lang['errLen'] = ' est trop court ou trop long';
+$lang['errBot'] = 'Code Anti Spam incorrect!';
 $lang['pinned'] = 'Épinglé';
 $lang['replied'] = 'a répondu à &crarr; ';
 $lang['started'] = 'a commencé &rArr; ';
 $lang['notFound'] = 'Oops! Cette page n\'existe plus :(';
+$lang['errNotMatch'] = 'Les Mots de Passe ne correspondent pas';
 
 ?>

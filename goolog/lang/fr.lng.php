@@ -37,9 +37,10 @@ $lang['minute'] = 'minute';
 $lang['second'] = 'seconde';
 $lang['plural'] = 's';
 $lang['ago'] = 'avant';
-$lang['errorLength'] = ' est trop long ou trop court';
-$lang['errorBot'] = 'CAPTCHA Incorrecte';
+$lang['errLen'] = ' est trop long ou trop court';
+$lang['errBot'] = 'CAPTCHA Incorrecte';
 $lang['replied'] = 'répondus à ';
 $lang['notFound'] = 'Oops! Cette page n\'existe plus :(';
+$lang['errNotMatch'] = 'Les Mots de Passe ne correspondent pas';
 
 ?>

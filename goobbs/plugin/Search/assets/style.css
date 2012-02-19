@@ -1,5 +1,5 @@
-/******* Sidebar Search *******/
-#sidebar input[type=text]	{display: inline-block; width: 130px; margin: 0; padding: 4px 10px 3px 20px;
+/******* Search *******/
+#search input[type=text]	{display: inline-block; width: 130px; margin: 0; padding: 4px 10px 3px 20px;
 				 border: none; -moz-border-radius: 10px; -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.7);
 				 font: 11px "Lucida Grande", sans-serif;
 				 /* search.png: */ background: #ddd url("data:image/png;base64,\
@@ -8,12 +8,12 @@
 				 goWQkpSfoKGio4AL660AAABaSURBVHheXY1HEoAgFEMD+GmforT7H1VYoI5vlzIJQC7kHJzGhLgtCmsBuH6ytXwVR0\
 				 CYnhTEIwggNwtA2JrpK/61PdD98Uz3kQz2qU8jLiUVkVImjoiNMLHeotgFJ/aIIRcAAAAASUVORK5CYII=")
 				 no-repeat 5px 5px;}
-#sidebar input[type=text]:focus	{/* replicate the glow around the focused text box */
+#search input[type=text]:focus	{/* replicate the glow around the focused text box */
 				 -webkit-box-shadow: 0 0 3px 3px -webkit-focus-ring-color;
 				    -moz-box-shadow: 0 0 3px 3px -moz-mac-focusring, inset 0 1px 2px rgba(0,0,0,.7);
 				 background-color: #eee;}
 /* submit button inside the text field */
-#sidebar input[type=submit]	{display: none; width: 19px; height: 19px; cursor: pointer;
+#search input[type=submit]	{display: none; width: 19px; height: 19px; cursor: pointer;
 				 margin: 0 0 0 -23px; padding: 0; border: none; text-indent: -9999px;
 				 /* go.png: */ background: url("data:image/png;base64,\
 				 iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAASFBMVEUAAAA9HgBBIAD9cAD/dAP/dQX/dQX/dQX/dA\
@@ -22,14 +22,16 @@
 				 SxQfr3/UnRpIEeNFU2WTgA7K9jH6zSgeEMzcF++bbTlzeB/8213P9dWcBVH3LP+QN9IAb/TXCVCgAAAABJRU5ErkJg\
 				 gg==") no-repeat 0 4px;}
 /* hover / focus effects */
-#sidebar input[type=submit]:hover,  #sidebar input[type=text]:focus+input,
-#sidebar input[type=submit]:focus, #sidebar input[type=text]:hover+input
+#search input[type=submit]:hover,  #search input[type=text]:focus+input,
+#search input[type=submit]:focus, #search input[type=text]:hover+input
 				{display: inline-block;}
-#sidebar input[type=submit]:hover,  #sidebar input[type=submit]:focus
+#search input[type=submit]:hover,  #search input[type=submit]:focus
 				{/* go.png: */ background: url("data:image/png;base64,\
 				 iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAMAAABFNRROAAAAVFBMVEUAAAA+FQDwTgDwTgDwTgDtTgDqTwDwUADwUQ\
 				 DwUQDwUQDwUQDgUQDvUgDvUwDvUwDvUgDvVQDvVADw8O/tVQDt3Mzt28rt28ngo2vv7+7v7uzt3c3pZ0kxAAAAEXRS\
 				 TlMAIeTg1q6N9fv6+fZh/P3+/fUbhzIAAABkSURBVHheVY5HFoAwCERJlFjShNi9/z0FyyKzAP6jDYgCNp3FACrjPC\
 				 WK5J0RcoleZSdjfiY6dsUYAL3k7VTMCE2kH3MLI8+KV5EwgH16S5Ee23dv/fbqm/U/9dIzSz2Jl9rnDfeTCF6HAK3W\
-				 AAAAAElFTkSuQmCC") no-repeat 0 4px;}			 
-/******* /Sidebar Search *******/
+				 AAAAAElFTkSuQmCC") no-repeat 0 4px;}
+				 
+#form #search{display: none;}				 			 
+/******* /Search *******/

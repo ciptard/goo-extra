@@ -10,7 +10,7 @@ function online_footer()
 	}
 	$online[$_SERVER['REMOTE_ADDR']] = time();
 	saveEntry('plugin', 'online', $online);
-	return '<li>[online: ' .count($online). ']</li>';
+	return '<span class="label label-success">online: ' .count($online). '</span>';
 }
 
 ?>
